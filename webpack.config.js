@@ -10,6 +10,7 @@ module.exports = {
   devServer: {
     static: path.resolve(__dirname, 'dist'),
     open: true,
+    disableHostCheck: true,
     port: 9000
   },
   module: {
