@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "main": "src/index.js",
-  "type": "module",
   "scripts": {
+    "start": "webpack serve --open",
     "develop": "webpack-dev-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
