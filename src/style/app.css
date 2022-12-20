@@ -1,0 +1,187 @@
+.outer{
+  /* background-image: linear-gradient(to right, #0080ff, #99ccff); */
+  height: 100vh;
+  background-image: url('../../public/baseball-estadium.png');
+  background-position: bottom;
+  background-size: cover;
+}
+/* Forms */
+.error{
+  color: red;
+
+}
+
+/* form-label */
+.form-label{
+  color: white;
+  font-family: Georgia, serif;
+}
+
+/* form-label ends */
+.form{
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+/* btn */
+.btn-container{
+  display: flex;
+  align-content: center;
+  gap: 20px;
+  align-items: baseline;
+}
+
+.btn{
+  align-items: center;
+  appearance: button;
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 0;
+  font-family: "RM Neue",sans-serif;
+  font-size: 95%;
+  line-height: 0.8;
+  margin: 0;
+  padding: 10px 21px;
+  max-height: 40px;
+  text-align: center;
+  text-transform: none;
+  transition: color .13s ease-in-out,background .13s ease-in-out,opacity .13s ease-in-out,box-shadow .13s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+.btn-confirm:active {
+  background-color: #006AE8;
+}
+
+.btn-confirm:hover {
+  background-color: #1C84FF;
+}
+.btn-confirm {
+  background-color: #0276FF;
+  box-shadow: rgba(255, 255, 255, 0.26) 0 1px 2px inset;
+  color: #fff;
+}
+
+.btn-cancel {
+  background-color: #fb442c;
+  box-shadow: rgba(255, 255, 255, 0.26) 0 1px 2px inset;
+  color: #fff;
+}
+
+.btn-cancel:active {
+  background-color: #ff6868;
+}
+
+.btn-cancel:hover {
+  background-color: #ff6868;
+}
+/* Login */
+.login-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  height: 73vh;
+}
+.login-label{
+  text-align: center;
+  font-size: 2em;
+  color: white;
+}
+.form-container{
+  border: 1.5px;
+  border-style: solid;
+  border-radius: 10px;
+  padding: 4vh;
+  box-shadow: -8px 11px 20px black;
+}
+.form-input{
+  float: right;
+  /* padding-top: 2px;
+  padding-bottom: 2px; */
+}
+.link-container{
+  cursor: pointer;
+  color: #fff;
+}
+.link-container:hover{
+  color: #1988f8;
+}
+
+/* Login ends */
+/* Welcome  */
+.welcome,.match-container{
+  padding-left: 100px;
+}
+.team-name{
+  display: inline;
+}
+.game-container{
+  margin-bottom: 5vh;
+  border-top: 1.5px solid;
+  padding-top: 12px;
+  max-width: 70vh;
+}
+.buttons-container{
+  display: flex;
+  flex-direction: row-reverse;
+}
+.delete:hover{
+  color: #ff0000;
+  font-size: large;
+}
+.edit:hover{
+  color: #36a52e;
+  font-size: large;
+}
+.btn-icon{
+  cursor: pointer;
+}
+/* Welcome ends */
+/* Match  */
+.row{
+  display: flex;
+  margin-top: 7px;
+}
+.icon-container{
+  margin-right: 10px;
+}
+.local-container,.btn-container{
+  padding-left: 30px;
+}
+/* Match ends */
+/* modal  */
+/* .modal.show{
+  /* z-index: 1000!important; 
+} */
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
