@@ -4,7 +4,8 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "start": "webpack serve --open",
+    "start": "serve -s build",
+    "build": "npx webpack --config webpack.config.js",
     "develop": "webpack-dev-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -19,19 +20,20 @@
     "babel-loader": "9.1.0",
     "file-loader": "6.2.0",
     "formik": "2.2.9",
-    "react-icons": "4.4.0",
-    "react-modal": "3.15.1",
     "react": "18.2.0",
-    "react-router-dom": "6.3.0",
     "react-datepicker": "4.8.0",
     "react-dom": "18.2.0",
+    "react-icons": "4.4.0",
+    "react-modal": "3.15.1",
+    "react-router-dom": "6.3.0",
+    "serve": "^14.1.2",
     "webpack": "5.75.0",
     "webpack-cli": "5.0.1",
-    "yup": "0.32.11",
-    "webpack-dev-server": "4.11.1"
+    "yup": "0.32.11"
   },
   "devDependencies": {
     "css-loader": "^6.7.3",
-    "style-loader": "^3.3.1"
+    "style-loader": "^3.3.1",
+    "webpack-dev-server": "4.11.1"
   }
 }
