@@ -23,7 +23,7 @@ function App() {
             <ProtectedRoute user={userProfile} ><SharedLayout/></ProtectedRoute>
             }
         >
-          <Route path="*" element={<WelcomePage user={userProfile}/>} />
+          <Route path="/*" element={<WelcomePage user={userProfile}/>} />
           <Route path="create/match" element={<MatchPage user={userProfile}/>} />
         </Route>
 
