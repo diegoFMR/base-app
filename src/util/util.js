@@ -1,4 +1,4 @@
-const host = 'http://localhost:4200';
+const host = 'https://blush-catfish-gear.cyclic.app';
 
 const util = {
     API: {
