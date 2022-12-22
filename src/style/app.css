@@ -1,5 +1,7 @@
+body{
+  margin: 0px;
+}
 .outer{
-  /* background-image: linear-gradient(to right, #0080ff, #99ccff); */
   height: 100vh;
   background-image: url('../../public/baseball-estadium.png');
   background-position: bottom;
