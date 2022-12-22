@@ -5,6 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "start": "serve -s build",
+    "install": "npm install", 
     "build": "npm install ; npx webpack --config webpack.config.js",
     "develop": "webpack-dev-server",
     "test": "echo \"Error: no test specified\" && exit 1"
