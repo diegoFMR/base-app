@@ -23,13 +23,14 @@ function App() {
             <ProtectedRoute user={userProfile} ><SharedLayout/></ProtectedRoute>
             }
         >
-          <Route path="/*" element={<WelcomePage user={userProfile}/>} />
+          <Route path="*" element={<WelcomePage user={userProfile}/>} />
           <Route path="create/match" element={<MatchPage user={userProfile}/>} />
         </Route>
 
         <Route path="/login" element={<Login setUserProfile={setUserProfile}/>}/>
         <Route path="/register" element={<RegisterPage setUserProfile={setUserProfile}/>}/>
-
+        <Route path="*" element={<WelcomePage user={userProfile}/>} />
+        
       </Routes>
     </BrowserRouter>
   );
