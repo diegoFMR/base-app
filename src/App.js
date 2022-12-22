@@ -29,8 +29,8 @@ function App() {
 
         <Route path="/login" element={<Login setUserProfile={setUserProfile}/>}/>
         <Route path="/register" element={<RegisterPage setUserProfile={setUserProfile}/>}/>
-        <Route path="*" element={<WelcomePage user={userProfile}/>} />
-        
+        <Route path="*" element={<Login setUserProfile={setUserProfile}/>} />
+
       </Routes>
     </BrowserRouter>
   );
