@@ -36,6 +36,7 @@ module.exports = {
       },
       {
         test: /\.(png|jpe?g|gif)$/i,
+        include: path.resolve(__dirname, 'public'),
         use: [
           {
             loader: 'file-loader',
