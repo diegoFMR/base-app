@@ -9,8 +9,8 @@ import { IoEnterOutline } from 'react-icons/io5';
 
 function Login ({setUserProfile}) {
   let initialValues = {
-    pwd: "",
-    email: ""
+    pwd: "d@d.com",
+    email: "password"
   }
   let navigate = useNavigate();
   
