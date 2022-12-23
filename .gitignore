@@ -13,7 +13,7 @@
 
 #dist
 /dist
-
+/.vscode
 package-lock.json
 
 # misc
