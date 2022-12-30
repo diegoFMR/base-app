@@ -17,17 +17,20 @@ const loginController = {
                     switch(response.status){
                       case 404:
                         alert(" Wrong user name or password ");
+                        reject();
                         break;
                       case 500:
                         alert("There was an issue with the server. Please contact technical support.");
+                        reject();
                         break;
                       case 200:
                         resolve(response.json())      
                         break;
                       default:
                         alert("There was an unexpected issue with the system. Please contact technical support.");
+                        reject();
                     }//swtich ends
-                    reject();
+                    
                 })//fetch.then ends  
               }catch(e){
                 alert("There was an unexpected issue with the system. Please contact technical support.");
