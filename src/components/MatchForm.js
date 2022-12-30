@@ -9,6 +9,8 @@ import "react-datepicker/dist/react-datepicker.css";
 import { FiCalendar  } from 'react-icons/fi';
 import { GiBaseballBat  } from 'react-icons/gi';
 import { GoLocation } from 'react-icons/go';
+//components
+// import Button from './Button';
 
 function MatchForm ({user, _team, _stadium, _date, isLocal, _game, _ignoreId,onSuccess, SecondaryButton }) {
   let [team, setTeam] = useState(_team?_team:'');
@@ -107,6 +109,9 @@ function MatchForm ({user, _team, _stadium, _date, isLocal, _game, _ignoreId,onS
         }
         
         <div className='row btn-container'>
+          {/* <Button 
+
+          /> */}
           <button type='submit' className='btn btn-confirm'>
             Save
           </button>
