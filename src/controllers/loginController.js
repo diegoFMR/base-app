@@ -6,7 +6,7 @@ const loginController = {
     findUser: (data) => {
         let params = {email: data.email, pwd: data.pwd}
 
-        return new Promise((resolve)=>{
+        return new Promise((resolve, reject)=>{
             try{
                 fetch(util.API.USER.FIND_USER, {
                   method: "post",
@@ -27,6 +27,7 @@ const loginController = {
                       default:
                         alert("There was an unexpected issue with the system. Please contact technical support.");
                     }//swtich ends
+                    reject();
                 })//fetch.then ends  
               }catch(e){
                 alert("There was an unexpected issue with the system. Please contact technical support.");

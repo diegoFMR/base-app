@@ -15,13 +15,18 @@ function Login ({setUserProfile}) {
     email: "d@d.com"
   }
   let navigate = useNavigate();
-  
+  let loading = false;
+
   let handleSubmit = async(params)=>{
+    loading = true;
     loginController.findUser(params)
       .then((data)=>{
-      let {name, email, teamName, team_id, local_stadium } = data[0];
-      setUserProfile({name, email, teamName, team_id, local_stadium});
-    }).then(()=>navigate('/welcome'));
+        loading = false;
+        let {name, email, teamName, team_id, local_stadium } = data[0];
+        setUserProfile({name, email, teamName, team_id, local_stadium});
+    })
+    .catch(()=>loading = false)
+    .then(()=>navigate('/welcome'));
 
   }//handleSubmit ends
 
@@ -44,7 +49,7 @@ function Login ({setUserProfile}) {
           return (
             <form className='form' onSubmit={props.handleSubmit}>
               <div className='login-label'>
-                <BsShieldLockFill/>
+                {loading? <div className="lds-ring"><div/><div/><div/></div> : <BsShieldLockFill/>}
               </div>
               <div className='form-row'>
                 <div className='form-label'>
@@ -81,7 +86,7 @@ function Login ({setUserProfile}) {
                   type='submit' 
                   classs='btn btn-confirm' 
                   icon={IoEnterOutline}
-                  disabled={false}
+                  disabled={loading}
                   />
                 <div className='link-container'>
                   <p onClick={()=>navigate('/register')}>Sign up</p>

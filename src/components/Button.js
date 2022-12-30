@@ -18,10 +18,10 @@ class Button extends React.Component{
             <button 
                 type={this.state.type} 
                 className={this.state.classs}
-                disabled={this.state.disabled}
+                disabled={this.state.disabled? true: false}
                 onClick={this.state.onClick}
             >
-                {this.state.icon?<this.state.icon/>: this.state.text}
+                {this.state.icon?<this.state.icon/>: this.state.text} 
             </button>
         );
     }//render ends

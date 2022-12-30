@@ -10,7 +10,8 @@ class SelectTeam extends React.Component{
     this.state = {
       teamSelected: props.initialValue? props.initialValue: "0",
       teamList: [],
-      ignoreId: props.ignoreId
+      ignoreId: props.ignoreId,
+      loading: true
     };
     this.id = props.id;
     
@@ -18,9 +19,10 @@ class SelectTeam extends React.Component{
   }
 
   componentDidMount(){
-      Promise.all([teamController.requestTeam()]).then((data)=>{
-        this.setState({ "teamList": data[0]});
-      });
+    // this.setState({loading: true});
+    Promise.all([teamController.requestTeam()]).then((data)=>{
+      this.setState({ "teamList": data[0], loading: false});
+    });
   }//componentDidMount end
 
   showList(array){
@@ -46,7 +48,7 @@ class SelectTeam extends React.Component{
             value={this.state.teamSelected} 
             onChange={this.onChangeSelect}
           >
-            <option value="0"> Please select one team...</option>
+            <option value="0"> {this.state.loading? "Retreiving information...": "Please select one team..."} </option>
             {this.showList(this.state.teamList)}
           </select>
         </div>
