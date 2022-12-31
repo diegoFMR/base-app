@@ -45,7 +45,11 @@ class SelectStadium extends React.Component{
             value={this.state.stadiumSelected} 
             onChange={this.onChange}
           >
-            <option value="0"> Please select the stadium...</option>
+            <option value="0"> 
+            {this.state.loading? "Loading...": 
+                this.state.stadiumList ? "Please select one item..." : "No items found..." 
+              }
+            </option>
             {this.showList(this.state.stadiumList)}
           </select>
         </div>

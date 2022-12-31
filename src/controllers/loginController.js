@@ -21,6 +21,7 @@ const loginController = {
                         break;
                       case 500:
                         alert("There was an issue with the server. Please contact technical support.");
+                        console.log("inside here")
                         reject();
                         break;
                       case 200:
@@ -31,9 +32,11 @@ const loginController = {
                         reject();
                     }//swtich ends
                     
-                })//fetch.then ends  
+                }).catch(()=>reject());//fetch.then ends  
               }catch(e){
                 alert("There was an unexpected issue with the system. Please contact technical support.");
+                console.log("inside default")
+                reject();
               }
         });//return Promise ends
         

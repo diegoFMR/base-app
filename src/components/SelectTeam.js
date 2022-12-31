@@ -55,7 +55,8 @@ class SelectTeam extends React.Component{
             <option value="0" className="loading">
                {this.state.loading? "Loading...": 
                   this.state.teamList ? "Please select one item..." : "No items found..." 
-                } </option>
+                }
+            </option>
             {this.showList(this.state.teamList)}
           </select>
         </div>
