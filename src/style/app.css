@@ -162,10 +162,6 @@ body{
 }
 /* Match ends */
 /* modal  */
-/* .modal.show{
-  /* z-index: 1000!important; 
-} */
-
 .App {
   text-align: center;
 }
@@ -189,15 +185,27 @@ body{
 .App-link {
   color: #61dafb;
 }
-
-
+/* modal  ends*/
+/* select*/
+.loading{
+  border: 1px solid;
+  animation: shadow-change 1.2s infinite;   
+}
+@keyframes shadow-change {
+  0% { 
+    border-color: rgb(70, 135, 255);
+    box-shadow: 1px 2px 6px rgb(70, 135, 255);
+  }
+  50% { 
+    box-shadow: 1px 2px 8px rgba(70, 135, 255, 0.354);
+  }
+  100% { 
+    box-shadow: 1px 2px 10px rgba(70, 135, 255, 0.893);
+  }
+}
+/* select ends*/
 /* Loader spinner*/
-/* .lds-ring {
-  display: inline-block;
-  position: relative;
-  width: 80px;
-  height: 80px;
-} */
+
 .lds-ring div {
   display: block;
   position: absolute;

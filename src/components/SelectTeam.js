@@ -19,36 +19,43 @@ class SelectTeam extends React.Component{
   }
 
   componentDidMount(){
-    // this.setState({loading: true});
     Promise.all([teamController.requestTeam()]).then((data)=>{
       this.setState({ "teamList": data[0], loading: false});
     });
   }//componentDidMount end
 
   showList(array){
-    let results = array.map((item)=>{
+    
+    let results = [];
+    
+    if(array){
+      results = array.map((item)=>{
 
-      if(this.state.ignoreId === item.team_id){
-        return [];
-      }
-
-      return (
-        <option value={item.team_id} key={item.team_id}> {item.name} </option>
-      )
-    })//map ends
+        if(this.state.ignoreId === item.team_id){
+          return [];
+        }
+  
+        return (
+          <option value={item.team_id} key={item.team_id}> {item.name} </option>
+        )
+      })//map ends
+    }
 
     return results;
   }
 
   render(){
     return(
-        <div className="select-container form-input">
+        <div className={`select-container form-input ${this.state.loading? 'loading':''}`}>
           <select 
             id={this.id}
             value={this.state.teamSelected} 
             onChange={this.onChangeSelect}
           >
-            <option value="0"> {this.state.loading? "Retreiving information...": "Please select one team..."} </option>
+            <option value="0" className="loading">
+               {this.state.loading? "Loading...": 
+                  this.state.teamList ? "Please select one item..." : "No items found..." 
+                } </option>
             {this.showList(this.state.teamList)}
           </select>
         </div>

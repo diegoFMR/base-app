@@ -8,7 +8,8 @@ class SelectStadium extends React.Component{
     super(props);
     this.state = {
       stadiumSelected: props.initialValue? props.initialValue: "0",
-      stadiumList: []
+      stadiumList: [],
+      loading: true
     };
 
     this.id = props.id;
@@ -18,23 +19,27 @@ class SelectStadium extends React.Component{
 
   componentDidMount(){
       Promise.all([stadiumController.listStadiums()]).then((data)=>{
-        this.setState({ "stadiumList": data[0]});
+        this.setState({ "stadiumList": data[0], loading: false});
       });
   }
 
   showList(array){
-    let results = array.map((item)=>{
-      return (
-        <option value={item.stadium_id} key={item.stadium_id}> {item.name} </option>
-      )
-    })//map ends
+    let results = [];
+
+    if(array){
+      results = array.map((item)=>{
+        return (
+          <option value={item.stadium_id} key={item.stadium_id}> {item.name} </option>
+        )
+      })//map ends
+    } 
 
     return results;
   }
 
   render(){
     return(
-        <div>
+        <div className={`${this.state.loading? 'loading':''}`}>
           <select 
             id={this.id}
             value={this.state.stadiumSelected} 
