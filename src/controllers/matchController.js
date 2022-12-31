@@ -64,7 +64,7 @@ const matchController = {
   findNextGameById: (team) => {
     let params = {team}
     try{
-      return new Promise((resolve)=>{
+      return new Promise((resolve, reject)=>{
         fetch(util.API.GAME.FIND_BY_ID, {
           method: "post",
           headers: {'Content-Type': 'application/json'},
@@ -74,14 +74,17 @@ const matchController = {
             switch(response.status){
               case 404:
                 alert(" Couldnt load the next game ");
+                reject();
                 break;
               case 500:
                 alert("There was an issue with the server. Please contact technical support.");
+                reject();
                 break;
               case 200:
                 return resolve(response.json())
               default:
                 alert("There was an unexpected issue with the system. Please contact technical support.");
+                reject();
             }//swtich ends
   
             return result;

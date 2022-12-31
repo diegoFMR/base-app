@@ -188,7 +188,6 @@ body{
 /* modal  ends*/
 /* select*/
 .loading{
-  border: 1px solid;
   animation: shadow-change 1.2s infinite;   
 }
 @keyframes shadow-change {

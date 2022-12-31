@@ -16,7 +16,8 @@ class WelcomePage extends React.Component{
       openModal: false,
       mode: 'VIEW',
       matchProps: {},
-      eliminateId: undefined
+      eliminateId: undefined,
+      loading: true
     };  
 
     //binding methods
@@ -29,13 +30,13 @@ class WelcomePage extends React.Component{
 
   componentDidMount(){
     this.listGames();
-  }//didMount ends
+  }
 
   listGames(){
     Promise.all([matchController.findNextGameById(this.state.user.team_id)])
     .then((results)=>{
-      this.setState({nextGames: results[0], mode: 'VIEW', openModal: false});
-    })
+      this.setState({nextGames: results[0], mode: 'VIEW', openModal: false, loading: false});
+    }).catch(()=>this.setState({loading: false}))
   }
 
   editMode(item){
@@ -93,9 +94,9 @@ class WelcomePage extends React.Component{
       <div className="welcome">
         <p className="welcome-p">Welcome back {this.state.user.name}</p>
         <div>Your team: <h4 className="team-name">{this.state.user.teamName}</h4></div>
-        <div>
-          {this.state.mode === 'VIEW'? <p>Next 2 upcoming games</p>:null}
-          {show}
+        <div className={`${this.state.loading?'loading': ''}`}>
+          {this.state.mode === 'VIEW'? this.state.loading? 'Loading...':<p>Next 2 upcoming games</p>: null}
+          {this.state.loading?null:show}
 
           <Modal
             tittle={'Are you sure that you want to delete this game?'}
