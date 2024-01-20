@@ -53,7 +53,7 @@ function Login ({setUserProfile}) {
               </div>
               <div className='form-row'>
                 <div className='form-label'>
-                  Email
+                  Email   VAMOS A VER 
                 </div>
                 <div className='form-input'>
                   <input
